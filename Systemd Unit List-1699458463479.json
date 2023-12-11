@@ -168,12 +168,7 @@
           "show": false
         },
         "showHeader": true,
-        "sortBy": [
-          {
-            "desc": false,
-            "displayName": "Status"
-          }
-        ]
+        "sortBy": []
       },
       "pluginVersion": "10.1.4",
       "targets": [
@@ -223,6 +218,18 @@
               "type": ""
             }
           }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": false,
+                "field": "Status"
+              }
+            ]
+          }
         }
       ],
       "type": "table"
@@ -243,6 +250,6 @@
   "timezone": "",
   "title": "Systemd Unit List",
   "uid": "ba0a0d20-ff49-4fc9-99f6-34035449d22c",
-  "version": 10,
+  "version": 12,
   "weekStart": ""
 }
