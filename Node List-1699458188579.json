@@ -229,12 +229,7 @@
           "show": false
         },
         "showHeader": true,
-        "sortBy": [
-          {
-            "desc": false,
-            "displayName": "Hostname"
-          }
-        ]
+        "sortBy": []
       },
       "pluginVersion": "10.1.4",
       "targets": [
@@ -246,7 +241,7 @@
           "disableTextWrap": false,
           "editorMode": "builder",
           "exemplar": false,
-          "expr": "up{job!=\"prometheus\"}",
+          "expr": "up{job=\"nodemonitoring\"}",
           "format": "table",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -312,7 +307,7 @@
           "id": "joinByField",
           "options": {
             "byField": "instance",
-            "mode": "inner"
+            "mode": "outer"
           }
         },
         {
@@ -323,6 +318,9 @@
               "Time 2": true,
               "Time 3": true,
               "Time 4": true,
+              "Value #B": false,
+              "Value #C": false,
+              "Value #D": false,
               "__name__ 1": true,
               "__name__ 2": true,
               "env 1": true,
@@ -358,12 +356,24 @@
               "instance": "Hostname"
             }
           }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": false,
+                "field": "Status"
+              }
+            ]
+          }
         }
       ],
       "type": "table"
     }
   ],
-  "refresh": "",
+  "refresh": "1m",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [],
@@ -378,6 +388,6 @@
   "timezone": "",
   "title": "Node List",
   "uid": "b1b4c2aa-0b3b-41e7-9ac1-0c39e7b9ec6d",
-  "version": 3,
+  "version": 9,
   "weekStart": ""
 }
